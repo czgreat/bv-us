@@ -18,11 +18,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        var keepSplashScreen = true
-        installSplashScreen().apply {
-            setKeepOnScreenCondition { keepSplashScreen }
-        }
+    override fun onCreate(savedInstanceState: Bundle?) {  
+    super.onCreate(savedInstanceState)  
+      
+    // 直接启动TV的MainActivity  
+    val intent = Intent(this, dev.aaa1115910.bv.tv.activities.MainActivity::class.java)  
+    startActivity(intent)  
+    finish()  
+}
         super.onCreate(savedInstanceState)
 
         setContent {
